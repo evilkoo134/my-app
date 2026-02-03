@@ -1,14 +1,19 @@
 import './NavbarStyles.css'
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
+import {FaBars, FaTimes} from 'react-icons/fa';
 
-const nav = () => {
+const Nav = () => {
+
+  const [click, setClick] = useState(false);
+  const handleClick = () => setClick(!click);
+
   return (
     <div className='header'>
         <Link to='/'>
           <h1>Testnav</h1>
         </Link>
-        <ul className='nav-menu'>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li>
             <Link to='/'>Home</Link>
           </li>
@@ -22,8 +27,12 @@ const nav = () => {
             <Link to='/Contact'>Contact</Link>
           </li>
         </ul>
+        <div className='hamburger' onClick={handleClick}>
+          {click ?(<FaTimes size={20} style={{color: 'white'}}></FaTimes>):
+          <FaBars size={20} style={{color: 'white'}}></FaBars>}
+        </div>
     </div>
   )
 }
 
-export default nav
+export default Nav

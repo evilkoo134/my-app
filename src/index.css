@@ -21,4 +21,21 @@ ul{
 .btn{
   padding: 12px 32px;
   font-size: 1rem;
+  text-transform: uppercase;
+  background: yellow;
+  color: black;
+  font-weight: 400;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.btn-light{
+  background: transparent;
+  color: whitesmoke;
+}
+
+.btn:hover{
+  background: grey;
+  color: white;
+  transition: 0.4s;
 }
